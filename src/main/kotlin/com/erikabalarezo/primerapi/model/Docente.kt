@@ -19,5 +19,7 @@ class Docente {
     var cedula: Long? = null
     var edad: Long? = null
     var telefono: Long? = null
+    @Column(name="departamento_id")
+    var departamentoId: Long? = null
 
 }

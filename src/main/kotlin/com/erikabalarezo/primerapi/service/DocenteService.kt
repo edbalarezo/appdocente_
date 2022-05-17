@@ -1,7 +1,7 @@
 package com.erikabalarezo.primerapi.service
 
-import com.erikabalarezo.primerapi.model.Departamento
 import com.erikabalarezo.primerapi.model.Docente
+import com.erikabalarezo.primerapi.repository.DepartamentoRepository
 import com.erikabalarezo.primerapi.repository.DocenteRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -15,6 +15,9 @@ class DocenteService {
     @Autowired
     lateinit var docenteRepository: DocenteRepository
 
+    @Autowired
+    lateinit var departamentoRepository: DepartamentoRepository
+
     fun list ():List<Docente>{
         return docenteRepository.findAll()
     }
@@ -27,6 +30,10 @@ class DocenteService {
         try {
             docente.nombre?.takeIf { it.trim().isNotEmpty() }
                     ?: throw Exception("Nombre no debe ser vacio")
+
+            departamentoRepository.findById(docente.departamentoId)
+                    ?: throw Exception("El departamento no exits")
+
             return docenteRepository.save(docente)
         } catch (ex: Exception) {
             throw ResponseStatusException(
