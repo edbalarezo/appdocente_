@@ -18,4 +18,7 @@ class Proyecto {
     var id: Long? = null
     var tema: String? = null
     var objetivos: String? = null
+
+    @Column(name="docente_id")
+    var docenteId: Long? = null
 }
