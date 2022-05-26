@@ -23,6 +23,10 @@ class DepartamentoService {
         return departamentoRepository.findById(id)
     }
 
+    fun getByArea (area: String?):List<Departamento>?{
+        return departamentoRepository.getListArea(area)
+    }
+
     fun save(departamento: Departamento):Departamento {
         try {
             departamento.area?.takeIf { it.trim().isNotEmpty() }

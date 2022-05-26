@@ -1,6 +1,7 @@
 package com.erikabalarezo.primerapi.controller
 
 import com.erikabalarezo.primerapi.model.Departamento
+import com.erikabalarezo.primerapi.model.Docente
 import com.erikabalarezo.primerapi.service.DepartamentoService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -25,6 +26,11 @@ class DepartamentoController {
     @GetMapping
     fun list(): List<Departamento>{
         return departamentoService.list()
+    }
+
+    @GetMapping ("/area/{area}")
+    fun listByArea (@PathVariable("area") area: String):List<Departamento>? {
+        return departamentoService.getByArea(area)
     }
 
     @GetMapping ("/{id}")

@@ -25,6 +25,11 @@ class DocenteController {
         return docenteService.getById(id)
     }
 
+    @GetMapping ("/edad/{edad}")
+    fun listByEdad (@PathVariable("edad") edad: Long):List<Docente>? {
+        return docenteService.getByEdad(edad)
+    }
+
     @PostMapping
     fun save(@RequestBody docente:Docente): Docente {
         return docenteService.save(docente)

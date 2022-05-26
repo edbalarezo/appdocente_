@@ -19,6 +19,11 @@ class ProyectoController {
         return proyectoService.list()
     }
 
+    @GetMapping ("/tema/{tema}")
+    fun listByTema (@PathVariable("tema") tema: String):List<Proyecto>? {
+        return proyectoService.getByTema(tema)
+    }
+
     @GetMapping ("/{id}")
     fun listById (@PathVariable("id") id: Long): Proyecto? {
         return proyectoService.getById(id)

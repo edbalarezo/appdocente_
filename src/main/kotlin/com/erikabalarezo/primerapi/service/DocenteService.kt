@@ -26,6 +26,10 @@ class DocenteService {
         return docenteRepository.findById(id)
     }
 
+    fun getByEdad (edad: Long?):List<Docente>?{
+        return docenteRepository.getListEdad(edad)
+    }
+
     fun save(docente:Docente):Docente {
         try {
             docente.nombre?.takeIf { it.trim().isNotEmpty() }

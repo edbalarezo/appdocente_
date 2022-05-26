@@ -23,6 +23,10 @@ class ProyectoService {
         return proyectoRepository.findById(id)
     }
 
+    fun getByTema (tema: String?):List<Proyecto>?{
+        return proyectoRepository.getListTema(tema)
+    }
+
     fun save(proyecto: Proyecto): Proyecto {
         try {
             proyecto.tema?.takeIf { it.trim().isNotEmpty() }
