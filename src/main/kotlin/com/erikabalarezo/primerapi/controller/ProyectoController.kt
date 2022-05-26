@@ -24,6 +24,11 @@ class ProyectoController {
         return proyectoService.getByTema(tema)
     }
 
+    @GetMapping ("/objetivos/{objetivos}")
+    fun listByObjetivos (@PathVariable("objetivos") objetivos: String):List<Proyecto>? {
+        return proyectoService.getByObjetivos(objetivos)
+    }
+
     @GetMapping ("/{id}")
     fun listById (@PathVariable("id") id: Long): Proyecto? {
         return proyectoService.getById(id)

@@ -7,6 +7,10 @@ import org.springframework.data.repository.query.Param
 interface ProyectoRepository: JpaRepository <Proyecto, Long> {
 
     fun findById (id:Long?): Proyecto?
+
     @Query(nativeQuery = true)
     fun getListTema ( @Param("tema") tema:String?) : List <Proyecto>?
+
+    @Query(nativeQuery = true)
+    fun getListObjetivos ( @Param("objetivos") objetivos:String?) : List <Proyecto>?
 }

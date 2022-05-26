@@ -30,6 +30,16 @@ class DocenteController {
         return docenteService.getByEdad(edad)
     }
 
+    @GetMapping ("/cedula/{cedula}")
+    fun listByCedula (@PathVariable("cedula") cedula: Long):List<Docente>? {
+        return docenteService.getByCedula(cedula)
+    }
+
+    @GetMapping ("/telefono/{telefono}")
+    fun listByTelefono (@PathVariable("telefono") telefono: Long):List<Docente>? {
+        return docenteService.getByTelefono(telefono)
+    }
+
     @PostMapping
     fun save(@RequestBody docente:Docente): Docente {
         return docenteService.save(docente)

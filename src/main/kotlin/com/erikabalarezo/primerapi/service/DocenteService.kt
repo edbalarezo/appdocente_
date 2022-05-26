@@ -30,6 +30,14 @@ class DocenteService {
         return docenteRepository.getListEdad(edad)
     }
 
+    fun getByCedula (cedula: Long?):List<Docente>?{
+        return docenteRepository.getListCedula(cedula)
+    }
+
+    fun getByTelefono (telefono: Long?):List<Docente>?{
+        return docenteRepository.getListTelefono(telefono)
+    }
+
     fun save(docente:Docente):Docente {
         try {
             docente.nombre?.takeIf { it.trim().isNotEmpty() }
