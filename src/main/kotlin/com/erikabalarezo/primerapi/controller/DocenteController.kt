@@ -1,5 +1,6 @@
 package com.erikabalarezo.primerapi.controller
 
+import com.erikabalarezo.primerapi.dto.NuevaCiudad
 import com.erikabalarezo.primerapi.model.Departamento
 import com.erikabalarezo.primerapi.model.Docente
 import com.erikabalarezo.primerapi.service.DocenteService
@@ -38,6 +39,11 @@ class DocenteController {
     @GetMapping ("/telefono/{telefono}")
     fun listByTelefono (@PathVariable("telefono") telefono: Long):List<Docente>? {
         return docenteService.getByTelefono(telefono)
+    }
+
+    @PostMapping ("/change/ciudad")
+    fun updateOtherCiudad (@RequestBody nuevaCiudad: NuevaCiudad): String? {
+        return docenteService.updateOtherCiudad (nuevaCiudad)
     }
 
     @PostMapping

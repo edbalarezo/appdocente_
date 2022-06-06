@@ -1,5 +1,6 @@
 package com.erikabalarezo.primerapi.service
 
+import com.erikabalarezo.primerapi.dto.NuevaCiudad
 import com.erikabalarezo.primerapi.model.Docente
 import com.erikabalarezo.primerapi.repository.DepartamentoRepository
 import com.erikabalarezo.primerapi.repository.DocenteRepository
@@ -44,7 +45,7 @@ class DocenteService {
                     ?: throw Exception("Nombre no debe ser vacio")
 
             departamentoRepository.findById(docente.departamentoId)
-                    ?: throw Exception("El departamento no exits")
+                    ?: throw Exception("El departamento no exite")
 
             return docenteRepository.save(docente)
         } catch (ex: Exception) {
@@ -65,6 +66,11 @@ class DocenteService {
                     HttpStatus.NOT_FOUND, ex.message, ex)
 
         }
+    }
+
+    fun updateOtherCiudad (nuevaCiudad: NuevaCiudad): String? {
+        val rows =  docenteRepository.setOtherCiudad (nuevaCiudad.ciudad, nuevaCiudad.nuevaCiudad)
+        return "fueran afectadas " + rows
     }
 
     fun updateName (docente: Docente): Docente {

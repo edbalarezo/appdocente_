@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS docente (
   cedula INT,
   edad INT,
   telefono INT,
+  ciudad VARCHAR (100) NOT NULL,
   departamento_id INT,
   proyecto_id INT,
   PRIMARY KEY (id),
@@ -24,4 +25,12 @@ CREATE TABLE IF NOT EXISTS docente (
  docente_id INT,
  PRIMARY KEY (id),
  FOREIGN KEY (docente_id) REFERENCES docente (id)
-    );
+ );
+
+ CREATE TABLE IF NOT EXISTS usuario (
+   id SERIAL,
+   username VARCHAR (10) NOT NULL,
+   password VARCHAR (10) NOT NULL
+   PRIMARY KEY (id)
+ );
+

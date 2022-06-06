@@ -7,22 +7,16 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Table
 
-@Entity
-@Table(name = "docente")
 
-class Docente {
+@Entity
+@Table(name = "usuario")
+
+class Usuario {
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(updatable = false)
     var id: Long? = null
-    var nombre: String? = null
-    var cedula: Long? = null
-    var edad: Long? = null
-    var telefono: Long? = null
-    var ciudad: String? = null
-
-    @Column(name="departamento_id")
-    var departamentoId: Long? = null
-
-
+    var username: String? = null
+    var password: String? = null
 }
