@@ -24,5 +24,9 @@ class Docente {
     @Column(name="departamento_id")
     var departamentoId: Long? = null
 
+    @Column(name="proyecto_id")
+    var proyectoId: Long? = null
+
+
 
 }

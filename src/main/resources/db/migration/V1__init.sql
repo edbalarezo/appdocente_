@@ -4,6 +4,14 @@ CREATE TABLE IF NOT EXISTS departamento (
   PRIMARY KEY (id)
   );
 
+ CREATE TABLE IF NOT EXISTS proyecto (
+ id SERIAL,
+ tema VARCHAR (100) NOT NULL,
+ objetivos VARCHAR (100) NOT NULL,
+ PRIMARY KEY (id)
+
+ );
+
 CREATE TABLE IF NOT EXISTS docente (
   id SERIAL,
   nombre VARCHAR (100) NOT NULL,
@@ -14,23 +22,14 @@ CREATE TABLE IF NOT EXISTS docente (
   departamento_id INT,
   proyecto_id INT,
   PRIMARY KEY (id),
-  FOREIGN KEY (departamento_id) REFERENCES departamento (id)
+  FOREIGN KEY (departamento_id) REFERENCES departamento (id),
+  FOREIGN KEY (proyecto_id) REFERENCES proyecto (id)
   );
-
-
- CREATE TABLE IF NOT EXISTS proyecto (
- id SERIAL,
- tema VARCHAR (100) NOT NULL,
- objetivos VARCHAR (100) NOT NULL,
- docente_id INT,
- PRIMARY KEY (id),
- FOREIGN KEY (docente_id) REFERENCES docente (id)
- );
 
  CREATE TABLE IF NOT EXISTS usuario (
    id SERIAL,
    username VARCHAR (10) NOT NULL,
-   password VARCHAR (10) NOT NULL
+   password VARCHAR (10) NOT NULL,
    PRIMARY KEY (id)
  );
 
