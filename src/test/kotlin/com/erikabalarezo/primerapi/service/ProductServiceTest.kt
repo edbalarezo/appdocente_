@@ -39,4 +39,34 @@ class ProductServiceTest {
         }
     }
 
+    @Test
+    fun multiplicacionWhenLessThanTen (){
+        val response=productService.multiplicacion(1,7)
+        Assertions.assertEquals(7,response)
+    }
+
+    @Test
+    fun multiplicacionWhenMajorThanTen (){
+        val response=productService.multiplicacion(2,7)
+        Assertions.assertEquals(5,response)
+    }
+
+    @Test
+    fun validarSumaNui(){
+        val response=productService.sumaValores("0301707030")
+        Assertions.assertEquals(20,response)
+    }
+
+    @Test
+    fun validarDecenaSuperiorCuandoNoEsCero(){
+        val response=productService.findDecenaSuperior(13)
+        Assertions.assertEquals(7,response)
+    }
+
+    @Test
+    fun validarDecenaSuperior(){
+        val response=productService.findDecenaSuperior(20)
+        Assertions.assertEquals(0,response)
+    }
 }
+
