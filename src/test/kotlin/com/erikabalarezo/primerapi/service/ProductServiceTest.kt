@@ -137,7 +137,7 @@ class ProductServiceTest {
     @Test
     fun pagoBaseContaminaCorrectoLoja(){
         val response=productService.getPagoContaminacion("LBB-1827",2012)
-        Assertions.assertEquals(0,response)
+        Assertions.assertEquals(45,response)
     }
 
 

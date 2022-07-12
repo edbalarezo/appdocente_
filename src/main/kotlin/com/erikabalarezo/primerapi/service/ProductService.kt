@@ -98,6 +98,10 @@ class ProductService {
             } else if (arrayPlaca[0]=='C'){
                 prov="C"
             }
+            } else if (arrayPlaca[0]=='L'){
+            prov="L"
+
+
         }
 
         return prov
