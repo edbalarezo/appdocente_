@@ -1,7 +1,5 @@
 package com.erikabalarezo.primerapi.service
 
-import com.example.eva3m.modelo.Pago
-import com.example.eva3m.repository.PagoRepository
 import org.springframework.stereotype.Service
 
 @Service
