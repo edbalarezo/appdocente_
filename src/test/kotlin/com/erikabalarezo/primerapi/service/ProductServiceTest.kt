@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
 class ProductServiceTest {
-    /*@Autowired
+    @Autowired
     lateinit var productService: ProductService
 
 
@@ -76,9 +76,9 @@ class ProductServiceTest {
     fun ultimoDigitInvalid (){
         val response=productService.validarTotal("0106430048")
         Assertions.assertEquals(false,response)
-    }*/
+    }
 
-    @Autowired
+    /*@Autowired
     lateinit var productService: ProductService
 
     @Test
@@ -138,7 +138,7 @@ class ProductServiceTest {
     fun pagoBaseContaminaCorrectoLoja(){
         val response=productService.getPagoContaminacion("LBB-1827",2012)
         Assertions.assertEquals(45,response)
-    }
+    }*/
 
 
 }

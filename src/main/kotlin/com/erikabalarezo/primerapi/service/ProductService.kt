@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class ProductService {
-    /*fun validateSerialNumber (serial:String?): Boolean? {
+    fun validateSerialNumber (serial:String?): Boolean? {
 
         serial.takeIf { !it?.trim().isNullOrEmpty() }
                 ?: throw Exception()
@@ -63,10 +63,11 @@ class ProductService {
 
         return resto ==ultimoDigito
 
-    }*/
+    }
+}
 
 
-    lateinit var pagoRepository: PagoRepository
+    /*lateinit var pagoRepository: PagoRepository
 
     fun save (pago: Pago):Pago?{
         return pagoRepository.save(pago)
@@ -147,5 +148,4 @@ class ProductService {
         //return pagoBase+10
         return pagoTotal
 
-}
-}
+}*/
